@@ -77,7 +77,6 @@ Advanced preprocessing and resampling methods are applied to improve detection a
 ## 🤝 Contributors
 
 * Lakshya Pandey
-* Prince Mittal
 
 ---
 
@@ -85,3 +84,4 @@ Advanced preprocessing and resampling methods are applied to improve detection a
 
 This project is licensed under the MIT License.
 
+💳 [Credit Card Fraud Detection](https://github.com/pandeylakshya207-max/credit-card-fraud-detector)
