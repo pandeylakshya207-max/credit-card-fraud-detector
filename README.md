@@ -86,4 +86,4 @@ Credit_Card_Fraud_Project.ipynb
 ---
 
 <sub>⚡ Always building · Open to opportunities · Let's ship something great together</sub>
-a207-max/credit-card-fraud-detector)
+pandeylakshya207-max/credit-card-fraud-detector
