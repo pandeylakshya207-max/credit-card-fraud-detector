@@ -60,11 +60,7 @@ Credit_Card_Fraud_Project.ipynb
 
 ## 📊 GitHub Stats
 
-<p align="left">
-  <img src="https://streak-stats.demolab.com/?user=YOUR_GITHUB_USERNAME&theme=tokyonight&hide_border=true" alt="GitHub Streak" height="150"/>
-  &nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&hide_border=true&langs_count=6&theme=tokyonight&cache_seconds=1800" alt="Top Languages" height="150"/>
-</p>
+<a href="https://git.io/streak-stats"><img src="https://streak-stats.demolab.com?user=pandeylakshya207-max&theme=tokyonight" alt="GitHub Streak" /></a>
 
 ---
 
