@@ -42,7 +42,7 @@
 
 **Stack:** `Python` · `Scikit-learn` · `Pandas` · `NumPy` · `Matplotlib` · `Seaborn` · `Google Colab`
 
-📂 [View Repository →](https://github.com/YOUR_GITHUB_USERNAME/credit-card-fraud-detection)
+📂 [View Repository →](https://github.com/pandeylakshya207-max/credit-card-fraud-detection)
 
 ---
 
