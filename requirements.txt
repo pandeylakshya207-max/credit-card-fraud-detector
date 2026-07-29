@@ -3,3 +3,8 @@ numpy
 scikit-learn
 matplotlib
 seaborn
+imbalanced-learn
+fastapi
+uvicorn[standard]
+pydantic
+httpx

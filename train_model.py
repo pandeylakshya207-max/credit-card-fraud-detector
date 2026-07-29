@@ -47,9 +47,17 @@ print(f"Loaded {len(df)} transactions, {df['Class'].sum()} fraud "
 # ─── 2. Feature scaling ────────────────────────────────────────────────────
 # V1-V28 are already PCA-transformed (roughly standardized). Time and Amount
 # are raw and on very different scales — scale them to match.
-scaler = StandardScaler()
-df["Time_scaled"] = scaler.fit_transform(df[["Time"]])
-df["Amount_scaled"] = scaler.fit_transform(df[["Amount"]])
+# V1-V28 are already PCA-transformed (roughly standardized). Time and Amount
+# are raw and on very different scales — scale them to match.
+# NOTE: Time and Amount need SEPARATE scaler objects. Using one shared
+# StandardScaler and calling fit_transform() twice (once per column) causes
+# the second call to silently overwrite the first's fitted statistics --
+# the persisted scaler would then only be valid for whichever column was
+# fit last, silently corrupting inference for the other column.
+time_scaler = StandardScaler()
+amount_scaler = StandardScaler()
+df["Time_scaled"] = time_scaler.fit_transform(df[["Time"]])
+df["Amount_scaled"] = amount_scaler.fit_transform(df[["Amount"]])
 df = df.drop(columns=["Time", "Amount"])
 
 X = df.drop("Class", axis=1)
@@ -134,8 +142,10 @@ print(f"\nBest approach by PR-AUC: {best_name}")
 
 with open("fraud_model.pkl", "wb") as f:
     pickle.dump(best_model, f)
-with open("scaler.pkl", "wb") as f:
-    pickle.dump(scaler, f)
+with open("time_scaler.pkl", "wb") as f:
+    pickle.dump(time_scaler, f)
+with open("amount_scaler.pkl", "wb") as f:
+    pickle.dump(amount_scaler, f)
 
 results = {
     "dataset": "ULB Credit Card Fraud (via Kaggle/GitHub mirror)",
@@ -154,4 +164,4 @@ results = {
 with open("metrics.json", "w") as f:
     json.dump(results, f, indent=2)
 
-print("\nSaved: fraud_model.pkl, scaler.pkl, metrics.json")
+print("\nSaved: fraud_model.pkl, time_scaler.pkl, amount_scaler.pkl, metrics.json")
